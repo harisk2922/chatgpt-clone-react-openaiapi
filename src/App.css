@@ -1,38 +1,83 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+html {
+  font-size: 62.5%;
+  background-color: rgb(3, 1, 28);
   color: white;
+  font-family: 'Poppins', sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
+.App {
+  height: 100vh;
+  display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sidebar {
+  flex: 2.5;
+  border-right: 1px solid rgb(219, 214, 214);
+}
+
+.main {
+  flex: 9;
+}
+
+.logo {
+  margin-right: 1rem;
+}
+.brandName {
+  font-size: 2rem;
+}
+
+.upperSide {
+  padding: 2.5rem;
+  border-bottom: 1px solid rgb(219, 214, 214);
+  height: 70%;
+}
+
+.upperSideLogo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.btn {
+  background: #5A4BFF;
+  border: none;
+  font-size: 1.5rem;
+  padding: 1.5rem;
+  color: white;
+  width: 25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  border-radius: 0.5rem;
+}
+
+.addBtn {
+  height: 2rem;
+  padding-right: 1rem;
+}
+
+.query {
+  display:flex;
+  align-items: center;
+  background: transparent;
+  color: rgba(222,222,222,1);
+  padding: 1.5rem;
+  width: 25rem;
+  margin: 1rem auto;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(98,98,98,1);
+}
+
+.query>img {
+  margin-right: 2rem;
+  object-fit: cover;
+  height: 1.75rem;
 }
