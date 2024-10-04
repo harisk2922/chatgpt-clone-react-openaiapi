@@ -45,9 +45,10 @@ html {
 }
 
 .btn {
+  font-family: 'Poppins', sans-serif;
   background: #5A4BFF;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   padding: 1.5rem;
   color: white;
   width: 25rem;
@@ -57,15 +58,24 @@ html {
   margin: 0 auto;
   margin-bottom: 3rem;
   border-radius: 0.5rem;
+  transition-duration: 0.2s;  
+  cursor: pointer;
+}
+
+.btn:hover{
+  background-color: rgb(27, 17, 170);
+  color: white;
 }
 
 .addBtn {
-  height: 2rem;
+  height: 1.8rem;
   padding-right: 1rem;
 }
 
 .query {
+  font-family: 'Poppins', sans-serif;
   display:flex;
+  font-size: 1.3rem;
   align-items: center;
   background: transparent;
   color: rgba(222,222,222,1);
@@ -73,11 +83,47 @@ html {
   width: 25rem;
   margin: 1rem auto;
   border-radius: 0.5rem;
+  transition-duration: 0.2s;
   border: 1px solid rgba(98,98,98,1);
+}
+
+.query:hover{
+  background-color: rgba(98,98,98,1);
+  cursor: pointer;
 }
 
 .query>img {
   margin-right: 2rem;
   object-fit: cover;
   height: 1.75rem;
+}
+
+.lowerSide {
+  padding: 2rem;
+}
+
+.listItems {
+  margin: 0.75rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.listItems:hover{
+  color: rgb(157, 156, 156);
+  transition-duration: 0.2s;
+}
+
+.listItemsImg {
+  margin: 1rem;
+  padding-right: 1rem;
+}
+
+.listItems:nth-child(1)>.listItemsImg {
+  margin-right: 0.5rem;
+}
+
+.listItems:nth-child(3)>.listItemsImg {
+  margin-right: 0.75rem;
 }
