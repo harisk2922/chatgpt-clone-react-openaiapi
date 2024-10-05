@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/harisk2922/chatgpt-clone-react-openaiapi/static/css/main.1cb8659c.css",
-    "main.js": "/harisk2922/chatgpt-clone-react-openaiapi/static/js/main.8d27ca96.js",
-    "static/media/user-icon.png": "/harisk2922/chatgpt-clone-react-openaiapi/static/media/user-icon.79487ebd1120a8a7b004.png",
-    "static/media/chatgpt.svg": "/harisk2922/chatgpt-clone-react-openaiapi/static/media/chatgpt.4c8727aa9bdbf99f9994196451794f61.svg",
-    "static/media/chatgptLogo.svg": "/harisk2922/chatgpt-clone-react-openaiapi/static/media/chatgptLogo.496558ea071637d128587cb98b0e1b1c.svg",
-    "static/media/rocket.svg": "/harisk2922/chatgpt-clone-react-openaiapi/static/media/rocket.3083828716c5d7716f71aa7e179555de.svg",
-    "static/media/send.svg": "/harisk2922/chatgpt-clone-react-openaiapi/static/media/send.5cc05986cf306ae5d4ce38bf6fdc3def.svg",
-    "index.html": "/harisk2922/chatgpt-clone-react-openaiapi/index.html",
-    "static/media/bookmark.svg": "/harisk2922/chatgpt-clone-react-openaiapi/static/media/bookmark.c2178bf87e70a458757ba7290cea3ce7.svg",
-    "static/media/home.svg": "/harisk2922/chatgpt-clone-react-openaiapi/static/media/home.54b8621214269a989c8b7627385bcd8a.svg",
-    "static/media/message.svg": "/harisk2922/chatgpt-clone-react-openaiapi/static/media/message.ef36f79693990ff17ecf42cd018fcb4e.svg",
-    "main.1cb8659c.css.map": "/harisk2922/chatgpt-clone-react-openaiapi/static/css/main.1cb8659c.css.map",
-    "main.8d27ca96.js.map": "/harisk2922/chatgpt-clone-react-openaiapi/static/js/main.8d27ca96.js.map"
+    "main.css": "/chatgpt-clone-react-openaiapi/static/css/main.1cb8659c.css",
+    "main.js": "/chatgpt-clone-react-openaiapi/static/js/main.89dd101a.js",
+    "static/media/user-icon.png": "/chatgpt-clone-react-openaiapi/static/media/user-icon.79487ebd1120a8a7b004.png",
+    "static/media/chatgpt.svg": "/chatgpt-clone-react-openaiapi/static/media/chatgpt.4c8727aa9bdbf99f9994196451794f61.svg",
+    "static/media/chatgptLogo.svg": "/chatgpt-clone-react-openaiapi/static/media/chatgptLogo.496558ea071637d128587cb98b0e1b1c.svg",
+    "static/media/rocket.svg": "/chatgpt-clone-react-openaiapi/static/media/rocket.3083828716c5d7716f71aa7e179555de.svg",
+    "static/media/send.svg": "/chatgpt-clone-react-openaiapi/static/media/send.5cc05986cf306ae5d4ce38bf6fdc3def.svg",
+    "static/media/bookmark.svg": "/chatgpt-clone-react-openaiapi/static/media/bookmark.c2178bf87e70a458757ba7290cea3ce7.svg",
+    "index.html": "/chatgpt-clone-react-openaiapi/index.html",
+    "static/media/home.svg": "/chatgpt-clone-react-openaiapi/static/media/home.54b8621214269a989c8b7627385bcd8a.svg",
+    "static/media/message.svg": "/chatgpt-clone-react-openaiapi/static/media/message.ef36f79693990ff17ecf42cd018fcb4e.svg",
+    "main.1cb8659c.css.map": "/chatgpt-clone-react-openaiapi/static/css/main.1cb8659c.css.map",
+    "main.89dd101a.js.map": "/chatgpt-clone-react-openaiapi/static/js/main.89dd101a.js.map"
   },
   "entrypoints": [
     "static/css/main.1cb8659c.css",
-    "static/js/main.8d27ca96.js"
+    "static/js/main.89dd101a.js"
   ]
 }
