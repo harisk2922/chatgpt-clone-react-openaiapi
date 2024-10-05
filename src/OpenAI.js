@@ -1,16 +1,24 @@
-const { Configuration, OpenAIApi } = require('openai');
-const configuration = new Configuration({apiKey: ""});
-const openai = new OpenAIApi(configuration);
+import { OpenAI } from 'openai';
+const openai = new OpenAI({
+  apiKey: process.env.REACT_APP_OPENAI_API_KEY,
+  dangerouslyAllowBrowser: true,
+});
 
 export async function sendMsgToOpenAI(message) {
-    const res = await openai.createCompletion({
-        model: 'text-davinci-003',
-        promt: message,
-        temperature: 0.7,
-        max_tokens: 256,
-        top_p: 1,
-        frequency_penalty: 0,
-        presense_penalty: 0
+  try {
+    const res = await openai.chat.completions.create({
+      model: 'gpt-4',  
+      messages: [{ role: 'user', content: message }],
+      temperature: 0.7,
+      max_tokens: 256,
+      top_p: 1,
+      frequency_penalty: 0,
+      presence_penalty: 0
     });
-    return res.data.choices[0].text;
+
+    return res.choices[0].message.content;
+  } catch (error) {
+    console.error('Error with OpenAI API request:', error);
+    return "Error occurred, please try again later.";
+  }
 }

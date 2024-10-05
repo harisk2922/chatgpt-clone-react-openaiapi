@@ -138,6 +138,7 @@ html {
 }
 
 .chatbox {
+  margin-top: 4rem;
   overflow: hidden;
   overflow-y: scroll;
   scroll-behavior: smooth;
@@ -210,4 +211,9 @@ html {
 
 .chatboxFooter>p{
   margin: 2rem 0;
+}
+
+.text {
+  line-height: 2.5rem;
+  color: rgba(222,222,222,1);
 }

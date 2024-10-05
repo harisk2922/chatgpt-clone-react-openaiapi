@@ -1,4 +1,6 @@
 import './App.css';
+import { useEffect, useRef, useState } from 'react';
+
 import gptLogo from './assets/chatgpt.svg';
 import addBtn from './assets/add-30.png'
 import msgIcon from './assets/message.svg'
@@ -8,17 +10,62 @@ import rocket from './assets/rocket.svg'
 import sendBtn from './assets/send.svg'
 import userIcon from './assets/user-icon.png'
 import gptImgLogo from './assets/chatgptLogo.svg'
+import { sendMsgToOpenAI } from './OpenAI';
 
 function App() {
+  const [input, setInput] = useState("");
+  const [messages, setMessages] = useState([{
+    text: "Hi I am ChatGPT!",
+    isBot: true,
+  }]);
+
+  const msgEnd = useRef(null);
+  useEffect(() => {
+    msgEnd.current.scrollIntoView();
+  }, [messages])
+
+  const handleSend = async () => {
+    const text = input;
+    setInput('');
+    setMessages([
+      ...messages,
+      {text, isBot: false}
+    ])
+    const res = await sendMsgToOpenAI(text);
+    setMessages([
+      ...messages,
+      { text, isBot: false },
+      { text: res, isBot: true }
+    ]);
+  }
+
+  const handleEnter = async (e) => {
+    if(e.key==='Enter') await handleSend();
+  }
+
+  const handleQuery = async (e) => {
+    const text = e.target.value;
+    setMessages([
+      ...messages,
+      {text, isBot: false}
+    ])
+    const res = await sendMsgToOpenAI(text);
+    setMessages([
+      ...messages,
+      { text, isBot: false },
+      { text: res, isBot: true }
+    ]);
+  }
+
   return (
     <div className="App">
       <div className="sidebar">
         <div className="upperSide">
           <div className="upperSideLogo"><img src={gptLogo} alt="Logo" className="logo" /><span className="brandName">ChatGPT</span></div>
-          <button className="btn"><img className="addBtn" src={addBtn} alt="New Chat" />New Chat</button>
+          <button className="btn" onClick={()=>{window.location.reload()}}><img className="addBtn" src={addBtn} alt="New Chat" />New Chat</button>
           <div className="upperSideQueries">
-            <button className="query"><img src={msgIcon} alt="Query" />What is programming?</button>
-            <button className="query"><img src={msgIcon} alt="Query" />How to use the API?</button>
+            <button className="query" onClick={handleQuery} value={"What is programming?"}><img src={msgIcon} alt="Query" />What is programming?</button>
+            <button className="query" onClick={handleQuery} value={"How to use the API?"}><img src={msgIcon} alt="Query" />How to use the API?</button>
           </div>
         </div>
         <div className="lowerSide">
@@ -29,17 +76,16 @@ function App() {
       </div>
       <div className="main">
         <div className="chatbox">
-          <div className="chat">
-            <img src={userIcon} alt="" className="chatImg" /><p className="text">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</p>
-          </div>
-          <div className="chat bot">
-            <img src={gptImgLogo} alt="" className="chatImg" /><p className="text">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-              The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
-          </div>
+          {messages.map((message, i) => 
+            <div key={i} className={message.isBot?"chat bot":"chat"}>
+              <img src={message.isBot?gptImgLogo:userIcon} alt="" className="chatImg" /><p className="text">{ message.text }</p>
+            </div>
+          )}
+          <div ref={msgEnd}/>
         </div>
         <div className="chatboxFooter">
           <div className="input">
-            <input type="text" placeholder="Enter your input..." /><button className="send"  ><img src={sendBtn} alt="Send" className="sendBtn" /></button>
+            <input type="text" placeholder="Enter your input..." value={input} onKeyDown={handleEnter} onChange={(e) => { setInput(e.target.value) }} /><button className="send" onClick={handleSend}><img src={sendBtn} alt="Send" className="sendBtn" /></button>
           </div>
           <p>ChatGPT may produce inaccurate information about people, places, or facts. ChatGPT October 04 version.</p>
         </div>
