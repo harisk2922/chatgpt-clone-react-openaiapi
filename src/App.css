@@ -207,6 +207,14 @@ html {
 .input>input, .send {
   background: transparent;
   border: none;
+  margin-right: 0.5rem;
+  margin-top: 1px;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.sendBtn:hover {
+  cursor: pointer;
+  transform: scale(1.2); 
 }
 
 .chatboxFooter>p{
